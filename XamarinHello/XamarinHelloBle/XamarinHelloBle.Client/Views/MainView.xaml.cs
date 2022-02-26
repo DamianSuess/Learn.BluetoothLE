@@ -1,9 +1,9 @@
 ﻿
 namespace XamarinHelloBle.Client.Views
 {
-  public partial class MainPage
+  public partial class MainView
   {
-    public MainPage()
+    public MainView()
     {
       InitializeComponent();
     }

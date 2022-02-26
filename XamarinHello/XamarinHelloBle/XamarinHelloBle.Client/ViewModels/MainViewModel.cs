@@ -8,9 +8,9 @@ using System.Text;
 
 namespace XamarinHelloBle.Client.ViewModels
 {
-  public class MainPageViewModel : ViewModelBase
+  public class MainViewModel : ViewModelBase
   {
-    public MainPageViewModel(INavigationService navigationService)
+    public MainViewModel(INavigationService navigationService)
       : base(navigationService)
     {
       Title = "Main Page";

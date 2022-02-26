@@ -32,7 +32,8 @@ namespace XamarinHelloBle.Client
       containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
       containerRegistry.RegisterForNavigation<NavigationPage>();
-      containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+      containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
+      containerRegistry.RegisterForNavigation<DeviceListView, DeviceListViewModel>();
     }
   }
 }
