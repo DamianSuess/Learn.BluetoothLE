@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <bluefruit.h>
+#include <ble.h>
 
 unsigned int _counter = 0;
 
