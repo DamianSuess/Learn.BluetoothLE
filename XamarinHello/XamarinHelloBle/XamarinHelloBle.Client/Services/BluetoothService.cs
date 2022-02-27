@@ -42,9 +42,10 @@ namespace XamarinHelloBle.Client.Services
 
     public void StopScan()
     {
-      _scanStub?.Dispose();
-      _scanStub = null;
-      IsScanning = false;
+      throw new NotImplementedException();
+      //// _scanSubscription?.Dispose();
+      //// _scanSubscription = null;
+      //// IsScanning = false;
     }
 
     public async Task ToggleAdapterAsync()

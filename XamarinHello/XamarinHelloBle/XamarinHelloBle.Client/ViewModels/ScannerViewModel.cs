@@ -9,6 +9,7 @@ using Prism.Navigation;
 using Shiny;
 using Shiny.BluetoothLE;
 using Xamarin.Forms;
+using XamarinHelloBle.Client.Services;
 
 namespace XamarinHelloBle.Client.ViewModels
 {
@@ -103,7 +104,7 @@ namespace XamarinHelloBle.Client.ViewModels
         .Scan(null)
         .Buffer(TimeSpan.FromSeconds(1))
         .Where(x => x?.Any() ?? false)
-        ////.SubscribeOnThread(results =>
+        ////.SubscribeOnThread(results =>  //// <--- alt. using extension
         .Subscribe(results => Device.BeginInvokeOnMainThread(() =>
         {
           var list = new List<PeripheralItemViewModel>();
