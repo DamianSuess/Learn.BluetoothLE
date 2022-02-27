@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+using Shiny;
 using Shiny.BluetoothLE;
 
 namespace XamarinHelloBle.Client.Services
@@ -24,13 +27,40 @@ namespace XamarinHelloBle.Client.Services
       _ble = Shiny.ShinyHost.Resolve<IBleManager>();
     }
 
-    public void StartScanning()
+    public async Task StartScanAsync()
     {
+      if (_ble == null)
+      {
+        Console.WriteLine("BLE not supported on this platform.");
+        return;
+      }
+
+      await Task.Yield();
+
+      throw new NotImplementedException();
     }
 
-    public async Task StopScanningAsync()
+    public void StopScan()
     {
-      await Task.Yield();
+      _scanStub?.Dispose();
+      _scanStub = null;
+      IsScanning = false;
+    }
+
+    public async Task ToggleAdapterAsync()
+    {
+      // Turn BLE adapter on/off
+      if (_ble == null)
+      {
+        Console.WriteLine("BLE not supported on this platform!");
+        return;
+      }
+
+      var status = await _ble.RequestAccess();
+      if (status == AccessState.Available)
+        await _ble.TrySetAdapterState(false);
+      else
+        await _ble.TrySetAdapterState(true);
     }
   }
 }

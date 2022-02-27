@@ -333,7 +333,7 @@ dotnet_diagnostic.SA1137.severity = error
 # SA1124: Do not use regions
 dotnet_diagnostic.SA1124.severity = error
 # SA1200: UsingDirectivesMustBePlacedWithinNamespace
-dotnet_diagnostic.SA1200.severity = silent
+dotnet_diagnostic.SA1200.severity = none
 # SA1201: Elements should appear in the correct order
 dotnet_diagnostic.SA1201.severity = error
 # SA1202: Elements should be ordered by access
