@@ -10,9 +10,10 @@ namespace XamarinHelloBle.UWP
   /// <summary>
   /// Provides application-specific behavior to supplement the default Application class.
   /// </summary>
-  internal sealed partial class App : Application
+  public sealed partial class App : Application
   {
     /// <summary>
+    /// Initializes a new instance of the <see cref="App"/> class.
     /// Initializes the singleton application object.  This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
@@ -64,10 +65,10 @@ namespace XamarinHelloBle.UWP
     }
 
     /// <summary>
-    /// Invoked when Navigation to a certain page fails
+    /// Invoked when Navigation to a certain page fails.
     /// </summary>
-    /// <param name="sender">The Frame which failed navigation</param>
-    /// <param name="e">Details about the navigation failure</param>
+    /// <param name="sender">The Frame which failed navigation.</param>
+    /// <param name="e">Details about the navigation failure.</param>
     private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
     {
       throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
