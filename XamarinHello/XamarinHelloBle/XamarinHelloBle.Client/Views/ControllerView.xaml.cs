@@ -2,10 +2,9 @@
 
 namespace XamarinHelloBle.Client.Views
 {
-  /// <summary>Main</summary>
-  public partial class MainView : TabbedPage
+  public partial class ControllerView : ContentPage
   {
-    public MainView()
+    public ControllerView()
     {
       InitializeComponent();
     }

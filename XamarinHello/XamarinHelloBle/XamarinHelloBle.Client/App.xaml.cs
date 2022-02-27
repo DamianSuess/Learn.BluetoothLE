@@ -4,15 +4,17 @@ using Prism.Ioc;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
+using XamarinHelloBle.Client.Services;
 using XamarinHelloBle.Client.ViewModels;
 using XamarinHelloBle.Client.Views;
 
 namespace XamarinHelloBle.Client
 {
+  /// <summary>App.</summary>
   public partial class App
   {
     public App(IPlatformInitializer initializer)
-        : base(initializer)
+      : base(initializer)
     {
     }
 
@@ -30,10 +32,12 @@ namespace XamarinHelloBle.Client
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
       containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+      containerRegistry.RegisterSingleton<BluetoothService>();
 
       containerRegistry.RegisterForNavigation<NavigationPage>();
       containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
-      containerRegistry.RegisterForNavigation<DeviceListView, DeviceListViewModel>();
+      containerRegistry.RegisterForNavigation<ScannerView, ScannerViewModel>();
+      containerRegistry.RegisterForNavigation<ControllerView, ControllerViewModel>();
     }
   }
 }

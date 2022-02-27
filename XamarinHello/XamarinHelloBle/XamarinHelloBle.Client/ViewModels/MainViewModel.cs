@@ -1,10 +1,4 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Prism.Navigation;
 
 namespace XamarinHelloBle.Client.ViewModels
 {
@@ -14,6 +8,11 @@ namespace XamarinHelloBle.Client.ViewModels
       : base(navigationService)
     {
       Title = "Main Page";
+    }
+
+    public override void OnNavigatedTo(INavigationParameters parameters)
+    {
+      base.OnNavigatedTo(parameters);
     }
   }
 }

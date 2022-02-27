@@ -2,9 +2,10 @@
 
 namespace XamarinHelloBle.Client.Views
 {
-  public partial class DeviceListView : ContentPage
+  /// <summary>Scan View</summary>
+  public partial class ScannerView : ContentPage
   {
-    public DeviceListView()
+    public ScannerView()
     {
       InitializeComponent();
     }
