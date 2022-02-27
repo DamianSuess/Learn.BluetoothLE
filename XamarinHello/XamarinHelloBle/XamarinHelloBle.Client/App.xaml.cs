@@ -1,6 +1,7 @@
 ﻿using System;
 using Prism;
 using Prism.Ioc;
+using Shiny.BluetoothLE;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
@@ -22,7 +23,7 @@ namespace XamarinHelloBle.Client
     {
       InitializeComponent();
 
-      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
       if (!ret.Success)
       {
         Console.WriteLine($"Error! {ret.Exception.Message}");
@@ -32,6 +33,7 @@ namespace XamarinHelloBle.Client
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
       containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+      //// containerRegistry.RegisterSingleton<IBleManager, ShinyBle>();
       containerRegistry.RegisterSingleton<BluetoothService>();
 
       containerRegistry.RegisterForNavigation<NavigationPage>();

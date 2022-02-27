@@ -29,6 +29,7 @@ namespace XamarinHelloBle.Client.ViewModels
       Title = "Select Host Device";
 
       IsScanning = false;
+      //// ShinyHost.Init(platform);
 
       _ble = Shiny.ShinyHost.Resolve<IBleManager>();
       IsScanning = _ble?.IsScanning ?? false;

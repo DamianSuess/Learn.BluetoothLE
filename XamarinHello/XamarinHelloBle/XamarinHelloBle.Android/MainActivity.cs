@@ -4,6 +4,8 @@ using Android.OS;
 using Prism;
 using Prism.Ioc;
 
+//// [assembly: Shiny.ShinyApplication(ShinyStartupTypeName = "XamarinHelloBle")]
+
 namespace XamarinHelloBle.Droid
 {
   public class AndroidInitializer : IPlatformInitializer
@@ -15,13 +17,13 @@ namespace XamarinHelloBle.Droid
   }
 
   [Activity(Theme = "@style/MainTheme",
-                ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+            ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
   public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
   {
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
     {
       Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
+      //// ShinyOnRequestPermissionsResult(requestCode, permissions, grantResults);
       base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 

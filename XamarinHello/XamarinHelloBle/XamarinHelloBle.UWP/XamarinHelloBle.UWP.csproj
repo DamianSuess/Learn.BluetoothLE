@@ -125,6 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.13" />
+    <PackageReference Include="Shiny">
+      <Version>2.4.3.3003</Version>
+    </PackageReference>
+    <PackageReference Include="Shiny.BluetoothLE">
+      <Version>2.4.3.3003</Version>
+    </PackageReference>
     <PackageReference Include="StyleCop.Analyzers.Unstable">
       <Version>1.2.0.406</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

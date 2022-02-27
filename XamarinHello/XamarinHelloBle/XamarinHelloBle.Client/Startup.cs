@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Shiny;
+using Shiny.BluetoothLE;
 
 namespace XamarinHelloBle.Client
 {
@@ -15,13 +16,14 @@ namespace XamarinHelloBle.Client
       // services.AddSingleton<SampleSqliteConnection>();
       services.UseNotifications();
 
-      services.UseBleClient();
-
       // As BLE Client:
       //// services.UseBleClient();
       //// services.UseBleClient<Shiny.BluetoothLE.IBleDelegate>();
       //// services.UseBleClient<BleClientDelegate>();
-      //
+
+      services.UseBleClient();
+      ////services.UseBleClient<BleClientDelegate>();
+
       // As BLE Host:
       //// services.UseBleHosting();
     }

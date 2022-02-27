@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage x:Class="XamarinHelloBle.Client.Views.MainView"
-            xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com"
             xmlns:views="clr-namespace:XamarinHelloBle.Client.Views"
+            x:Class="XamarinHelloBle.Client.Views.MainView"
             prism:ViewModelLocator.AutowireViewModel="True">
-  <TabbedPage>
+  <TabbedPage.Children>
     <views:ScannerView />
     <views:ControllerView />
     <!--<views:LogView />-->
-  </TabbedPage>
+  </TabbedPage.Children>
 </TabbedPage>

@@ -7,12 +7,12 @@ namespace XamarinHelloBle.Client
 {
   public class BleClientDelegate : BleDelegate
   {
-    // readonly SampleSqliteConnection conn;
+    //// private readonly SampleSqliteConnection _sql;
     private readonly INotificationManager _notifications;
 
     public BleClientDelegate(INotificationManager notificationManager)
     {
-      // this.conn = conn;
+      // _sql = conn;
       _notifications = notificationManager;
     }
 
@@ -24,6 +24,8 @@ namespace XamarinHelloBle.Client
 
     public override async Task OnConnected(IPeripheral peripheral)
     {
+      await Task.Yield();
+
       ////await this.services.Connection.InsertAsync(new BleEvent
       ////{
       ////    Description = $"Peripheral '{peripheral.Name}' Connected",

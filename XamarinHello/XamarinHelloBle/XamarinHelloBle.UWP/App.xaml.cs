@@ -4,6 +4,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Shiny;
 
 namespace XamarinHelloBle.UWP
 {
@@ -21,6 +22,7 @@ namespace XamarinHelloBle.UWP
     {
       this.InitializeComponent();
       this.Suspending += OnSuspending;
+      //// this.ShinyInt(new Client.Startup());
     }
 
     /// <summary>
