@@ -5,9 +5,7 @@
             xmlns:views="clr-namespace:XamarinHelloBle.Client.Views"
             x:Class="XamarinHelloBle.Client.Views.MainView"
             prism:ViewModelLocator.AutowireViewModel="True">
-  <TabbedPage.Children>
     <views:ScannerView />
     <views:ControllerView />
     <!--<views:LogView />-->
-  </TabbedPage.Children>
 </TabbedPage>

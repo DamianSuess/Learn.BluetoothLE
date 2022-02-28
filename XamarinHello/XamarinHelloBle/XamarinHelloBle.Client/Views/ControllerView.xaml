@@ -4,5 +4,7 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XamarinHelloBle.Client.Views.ControllerView">
-  
+  <StackLayout>
+    <Label Text="Coming soon!" />
+  </StackLayout>
 </ContentPage>
