@@ -4,7 +4,9 @@ using Android.OS;
 using Prism;
 using Prism.Ioc;
 
-//// [assembly: Shiny.ShinyApplication(ShinyStartupTypeName = "XamarinHelloBle")]
+[assembly: Shiny.ShinyApplication(
+  ShinyStartupTypeName = "XamarinHelloBle.Client.Startup",
+  XamarinFormsAppTypeName = "XamarinHelloBle.Client.App")]
 
 namespace XamarinHelloBle.Droid
 {
@@ -18,7 +20,7 @@ namespace XamarinHelloBle.Droid
 
   [Activity(Theme = "@style/MainTheme",
             ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
-  public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+  public partial class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
   {
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
     {
@@ -29,6 +31,8 @@ namespace XamarinHelloBle.Droid
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
+      //// this.ShinyOnCreate();  // Shiny.ShinyOnCreate();
+
       TabLayoutResource = Resource.Layout.Tabbar;
       ToolbarResource = Resource.Layout.Toolbar;
 
