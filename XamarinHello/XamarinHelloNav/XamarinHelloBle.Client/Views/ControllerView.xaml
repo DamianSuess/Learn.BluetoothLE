@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="XamarinHelloBle.Client.Views.ControllerView">
-  
+             x:Class="XamarinHelloBle.Client.Views.ControllerView"
+             prism:ViewModelLocator.AutowireViewModel="True">
+  <StackLayout>
+    <Label Text="The GUI is working" />
+  </StackLayout>
 </ContentPage>

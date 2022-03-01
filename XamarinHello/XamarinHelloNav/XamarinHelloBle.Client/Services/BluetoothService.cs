@@ -6,7 +6,7 @@ using Shiny.BluetoothLE;
 
 namespace XamarinHelloBle.Client.Services
 {
-  public class BluetoothService
+  public class BluetoothService : IBluetoothService
   {
     private IBleManager _ble;
 
@@ -24,6 +24,7 @@ namespace XamarinHelloBle.Client.Services
 
     public void RefreshManager()
     {
+      // Something bad is happening here
       _ble = Shiny.ShinyHost.Resolve<IBleManager>();
     }
 

@@ -7,13 +7,13 @@ namespace XamarinHelloBle.Client.ViewModels
 {
   public class ControllerViewModel : ViewModelBase
   {
-    private readonly BluetoothService _ble;
+    //// private readonly BluetoothService _ble;
 
-    public ControllerViewModel(INavigationService nav, BluetoothService ble)
+    public ControllerViewModel(INavigationService nav) //// , BluetoothService ble)
       : base(nav)
     {
       Title = "Remote Control";
-      _ble = ble;
+      //// _ble = ble;
     }
 
     public DelegateCommand CmdToggleLed => new DelegateCommand(async () =>
