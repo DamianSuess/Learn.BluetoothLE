@@ -23,7 +23,7 @@ namespace XamarinHelloBle.Client
     {
       InitializeComponent();
 
-      ////ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
+      ////ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabbedView)}");
       var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ControllerView)}");
       if (!ret.Success)
       {
@@ -35,10 +35,10 @@ namespace XamarinHelloBle.Client
     {
       containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
       //// containerRegistry.RegisterSingleton<IBleManager, ShinyBle>();
-      containerRegistry.RegisterSingleton<BluetoothService>();
+      //// containerRegistry.RegisterSingleton<BluetoothService>();
 
       containerRegistry.RegisterForNavigation<NavigationPage>();
-      containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
+      containerRegistry.RegisterForNavigation<MainTabbedView, MainTabbedViewModel>();
       containerRegistry.RegisterForNavigation<ScannerView, ScannerViewModel>();
       containerRegistry.RegisterForNavigation<ControllerView, ControllerViewModel>();
     }

@@ -2,9 +2,9 @@
 
 namespace XamarinHelloBle.Client.ViewModels
 {
-  public class MainViewModel : ViewModelBase
+  public class MainTabbedViewModel : ViewModelBase
   {
-    public MainViewModel(INavigationService navigationService)
+    public MainTabbedViewModel(INavigationService navigationService)
       : base(navigationService)
     {
       Title = "Main Page";

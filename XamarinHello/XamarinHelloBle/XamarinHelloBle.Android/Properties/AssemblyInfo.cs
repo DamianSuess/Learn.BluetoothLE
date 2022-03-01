@@ -10,7 +10,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("XamarinHelloBle.Android")]
-[assembly: AssemblyCopyright("Copyright © YourCompany 2020")]
+[assembly: AssemblyCopyright("Copyright © YourCompany 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
