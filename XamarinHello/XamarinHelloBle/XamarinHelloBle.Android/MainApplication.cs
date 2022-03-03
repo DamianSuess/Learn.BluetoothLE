@@ -1,6 +1,7 @@
 ﻿using System;
 using Android.App;
 using Android.Runtime;
+using Shiny;
 
 namespace XamarinHelloBle.Droid
 {
@@ -10,6 +11,7 @@ namespace XamarinHelloBle.Droid
   [Application(Debuggable = false, Theme = "@style/MainTheme")]
 #endif
   public class MainApplication : Application
+  ////  public class MainApplication : ShinyAndroidApplication<ShinyAppStartup>
   {
     public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
       : base(javaReference, transfer)

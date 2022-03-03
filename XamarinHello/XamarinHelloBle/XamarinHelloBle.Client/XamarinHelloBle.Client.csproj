@@ -19,6 +19,8 @@
     <PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" />
     <PackageReference Include="Shiny" Version="2.4.3.3003" />
     <PackageReference Include="Shiny.BluetoothLE" Version="2.4.3.3003" />
+    <PackageReference Include="Shiny.Core" Version="2.4.3.3003" />
+    <PackageReference Include="Shiny.Jobs" Version="2.4.3.3003" />
     <PackageReference Include="Shiny.Notifications" Version="2.4.3.3003" />
     <PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.406">
       <PrivateAssets>all</PrivateAssets>

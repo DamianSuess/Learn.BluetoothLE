@@ -31,7 +31,7 @@ namespace XamarinHelloBle.Client.ViewModels
       IsScanning = false;
       //// ShinyHost.Init(platform);
 
-      //// _ble = Shiny.ShinyHost.Resolve<IBleManager>();
+      _ble = Shiny.ShinyHost.Resolve<IBleManager>();
 
       IsScanning = _ble?.IsScanning ?? false;
       CanControlAdapterState = _ble?.CanControlAdapterState() ?? false;

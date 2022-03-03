@@ -9,7 +9,6 @@ namespace XamarinHelloBle.UWP
     public MainPage()
     {
       this.InitializeComponent();
-
       LoadApplication(new XamarinHelloBle.Client.App(new UwpInitializer()));
     }
   }

@@ -1,10 +1,12 @@
 ﻿using System;
+using Shiny;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Shiny;
+using Xamarin.Forms;
+using Application = Windows.UI.Xaml.Application;
+using Frame = Windows.UI.Xaml.Controls.Frame;
 
 namespace XamarinHelloBle.UWP
 {
@@ -23,7 +25,9 @@ namespace XamarinHelloBle.UWP
       this.InitializeComponent();
       this.Suspending += OnSuspending;
 
-      ShinyInt<ShinyBackgroundTask>(new Client.Startup());
+      this.ShinyInit<ShinyBackgroundTask>(new Client.Startup());
+      ////Shiny.UwpPlatform.SetBackgroundTask(typeof(ShinyBackgroundTask));
+      ////ShinyHost.Init(new UwpPlatform(this), new Client.Startup());
     }
 
     /// <summary>
@@ -41,9 +45,9 @@ namespace XamarinHelloBle.UWP
       {
         // Create a Frame to act as the navigation context and navigate to the first page
         rootFrame = new Frame();
-
         rootFrame.NavigationFailed += OnNavigationFailed;
 
+        //// Rg.Plugins.Popup.Popup.Init();
         Xamarin.Forms.Forms.Init(e);
 
         if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -56,12 +60,7 @@ namespace XamarinHelloBle.UWP
       }
 
       if (rootFrame.Content == null)
-      {
-        // When the navigation stack isn't restored navigate to the first page,
-        // configuring the new page by passing required information as a navigation
-        // parameter
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
-      }
 
       // Ensure the current window is active
       Window.Current.Activate();

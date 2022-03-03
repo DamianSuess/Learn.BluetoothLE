@@ -10,11 +10,13 @@ namespace XamarinHelloBle.Linux.BlueZ
   {
     public static async Task<Adapter> GetAdapterAsync(string adapterName)
     {
+      await Task.Yield();
       throw new NotImplementedException();
     }
 
     public static async Task<IReadOnlyList<Adapter>> GetAdaptersAsync()
     {
+      await Task.Yield();
       throw new NotImplementedException();
     }
 

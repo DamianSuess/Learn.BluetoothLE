@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Shiny;
 using Shiny.BluetoothLE;
 using Shiny.Notifications;
@@ -18,12 +19,16 @@ namespace XamarinHelloBle.Client
 
     public override async Task OnAdapterStateChanged(AccessState state)
     {
+      Console.WriteLine($"BLE Client - State Changed {state}");
+
       if (state == AccessState.Disabled)
         await _notifications.Send("BLE State", "Turn on Bluetooth already");
     }
 
     public override async Task OnConnected(IPeripheral peripheral)
     {
+      Console.WriteLine("OnConnected to Peripheral!");
+
       await Task.Yield();
 
       ////await this.services.Connection.InsertAsync(new BleEvent

@@ -7,7 +7,9 @@ namespace XamarinHelloBle.Droid
   [Activity(Theme = "@style/MainTheme.Splash",
             MainLauncher = true,
             NoHistory = true)]
-  public class SplashActivity : AppCompatActivity
+
+  /// <summary>Splash screen.</summary>
+  public partial class SplashActivity : AppCompatActivity
   {
     // Launches the startup task
     protected override void OnResume()
