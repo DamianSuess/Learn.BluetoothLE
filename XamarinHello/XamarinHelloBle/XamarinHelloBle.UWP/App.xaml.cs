@@ -22,7 +22,8 @@ namespace XamarinHelloBle.UWP
     {
       this.InitializeComponent();
       this.Suspending += OnSuspending;
-      //// this.ShinyInt(new Client.Startup());
+
+      ShinyInt<ShinyBackgroundTask>(new Client.Startup());
     }
 
     /// <summary>

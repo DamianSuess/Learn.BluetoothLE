@@ -23,8 +23,9 @@ namespace XamarinHelloBle.Client
     {
       InitializeComponent();
 
-      ////ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabbedView)}");
-      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ControllerView)}");
+      //// ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabbedView)}");
+      //// var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ControllerView)}");
+      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ScannerView)}");
       if (!ret.Success)
       {
         Console.WriteLine($"Error! {ret.Exception.Message}");
