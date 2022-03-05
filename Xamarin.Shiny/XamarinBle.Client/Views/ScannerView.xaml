@@ -1,30 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              xmlns:viewModels="clr-namespace:XamarinHelloBle.Client.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinHelloBle.Client.Views.ScannerView"
              prism:ViewModelLocator.AutowireViewModel="True">
   <ContentPage.Content>
     <StackLayout>
-      <Button Text="Toggle Adapter"
+      <ActivityIndicator IsRunning="{Binding IsScanning}" IsVisible="{Binding IsScanning}" />
+
+      <Label Text="{Binding CanControlAdapterState, StringFormat='Can Control Adapter: {0}'}" />
+
+      <StackLayout Orientation="Horizontal">
+        <Button Text="Toggle Adapter"
               Command="{Binding CmdToggleAdapterState}"
               IsVisible="{Binding CanControlAdapterState}" />
 
-      <Button Command="{Binding CmdScan}">
-        <Button.Triggers>
-          <DataTrigger Binding="{Binding IsScanning}"
+        <Button Command="{Binding CmdScan}">
+          <Button.Triggers>
+            <DataTrigger Binding="{Binding IsScanning}"
                        TargetType="Button"
                        Value="True">
-            <Setter Property="Text" Value="Stop Scanning" />
-          </DataTrigger>
-          <DataTrigger Binding="{Binding IsScanning}"
+              <Setter Property="Text" Value="Stop Scanning" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsScanning}"
                        TargetType="Button"
                        Value="False">
-            <Setter Property="Text" Value="Scan" />
-          </DataTrigger>
-        </Button.Triggers>
-      </Button>
+              <Setter Property="Text" Value="Scan" />
+            </DataTrigger>
+          </Button.Triggers>
+        </Button>
+      </StackLayout>
 
       <CollectionView ItemSizingStrategy="MeasureFirstItem"
                       ItemsSource="{Binding Peripherals}"
@@ -82,9 +88,6 @@
           </DataTemplate>
         </CollectionView.ItemTemplate>
       </CollectionView>
-
-      <ActivityIndicator IsRunning="{Binding IsScanning}" />
-
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

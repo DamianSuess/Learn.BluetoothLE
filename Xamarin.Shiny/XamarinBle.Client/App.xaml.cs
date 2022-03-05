@@ -23,9 +23,9 @@ namespace XamarinHelloBle.Client
     {
       InitializeComponent();
 
-      //// ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabbedView)}");
+      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabbedView)}");
       //// var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ControllerView)}");
-      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ScannerView)}");
+      //// var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ScannerView)}");
       if (!ret.Success)
       {
         Console.WriteLine($"Error! {ret.Exception.Message}");
@@ -42,6 +42,7 @@ namespace XamarinHelloBle.Client
       containerRegistry.RegisterForNavigation<MainTabbedView, MainTabbedViewModel>();
       containerRegistry.RegisterForNavigation<ScannerView, ScannerViewModel>();
       containerRegistry.RegisterForNavigation<ControllerView, ControllerViewModel>();
+      containerRegistry.RegisterForNavigation<HostView, HostViewModel>();
     }
   }
 }

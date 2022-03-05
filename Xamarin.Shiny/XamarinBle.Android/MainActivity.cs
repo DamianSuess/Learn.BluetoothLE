@@ -27,9 +27,9 @@ namespace XamarinHelloBle.Droid
   {
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
     {
-      base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
       this.ShinyOnRequestPermissionsResult(requestCode, permissions, grantResults);
       Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+      base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

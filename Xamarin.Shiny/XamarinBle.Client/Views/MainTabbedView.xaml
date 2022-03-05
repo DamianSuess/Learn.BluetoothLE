@@ -6,8 +6,9 @@
             x:Class="XamarinHelloBle.Client.Views.MainTabbedView"
             prism:ViewModelLocator.AutowireViewModel="True">
   <TabbedPage.Children>
-    <views:ScannerView />
-    <views:ControllerView />
+    <views:ScannerView Title="Scanner" />
+    <views:HostView Title="Host" />
+    <views:ControllerView Title="Controller" />
     <!--<views:LogView />-->
   </TabbedPage.Children>
 </TabbedPage>

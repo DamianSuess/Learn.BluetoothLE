@@ -23,7 +23,7 @@ namespace XamarinHelloBle.Client
       //// services.UseBleHosting();
 
       services.UseBleClient();
-      services.UseBleHosting();
+      ////services.UseBleHosting();
       services.UseNotifications();
       services.UseJobs();
     }
