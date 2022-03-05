@@ -20,6 +20,7 @@ namespace XamarinHelloBle.Droid
 
     public override void OnCreate()
     {
+      this.ShinyOnCreate(new Client.Startup());
       base.OnCreate();
       Xamarin.Essentials.Platform.Init(this);
     }

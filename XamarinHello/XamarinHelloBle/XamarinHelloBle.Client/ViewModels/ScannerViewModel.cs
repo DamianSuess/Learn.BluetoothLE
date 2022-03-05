@@ -35,6 +35,7 @@ namespace XamarinHelloBle.Client.ViewModels
 
       IsScanning = _ble?.IsScanning ?? false;
       CanControlAdapterState = _ble?.CanControlAdapterState() ?? false;
+      Peripherals = new ObservableCollection<PeripheralItemViewModel>();
 
       SelectedPeripheral = null;
     }
@@ -47,7 +48,7 @@ namespace XamarinHelloBle.Client.ViewModels
 
     public DelegateCommand CmdScan => new DelegateCommand(async () =>
     {
-      if (IsScanning)
+      if (!IsScanning)
         await ScanStartAsync();
       else
         ScanStop();
@@ -63,11 +64,21 @@ namespace XamarinHelloBle.Client.ViewModels
         return;
       }
 
-      var status = await _ble.RequestAccess();
-      if (status == AccessState.Available)
-        await _ble.TrySetAdapterState(false);
+      var ret = false;
+      var btAccess = await _ble.RequestAccess();
+      if (btAccess == AccessState.Available)
+      {
+        ret = await _ble.TrySetAdapterState(false);
+      }
       else
-        await _ble.TrySetAdapterState(true);
+      {
+        ret = await _ble.TrySetAdapterState(true);
+      }
+
+      btAccess = await _ble.RequestAccess();
+
+      Console.WriteLine($"BT: Toggle Adapter result: {ret}");
+      Console.WriteLine($"BT: Adapter State: {btAccess}");
     });
 
     public bool IsScanning

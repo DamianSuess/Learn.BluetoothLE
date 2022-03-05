@@ -128,7 +128,13 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.13</Version>
     </PackageReference>
+    <PackageReference Include="Shiny.BluetoothLE.Hosting">
+      <Version>2.4.3.3003</Version>
+    </PackageReference>
     <PackageReference Include="Shiny.Core">
+      <Version>2.4.3.3003</Version>
+    </PackageReference>
+    <PackageReference Include="Shiny.Notifications">
       <Version>2.4.3.3003</Version>
     </PackageReference>
   </ItemGroup>

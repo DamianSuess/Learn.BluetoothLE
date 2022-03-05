@@ -14,18 +14,18 @@ namespace XamarinHelloBle.Client
     {
       // Inject our db so we can use it for Shiny Background events
       // services.AddSingleton<SampleSqliteConnection>();
-      services.UseNotifications();
 
       // As BLE Client:
       //// services.UseBleClient();
       //// services.UseBleClient<Shiny.BluetoothLE.IBleDelegate>();
       //// services.UseBleClient<BleClientDelegate>();
-
-      services.UseBleClient();
-      ////services.UseBleClient<BleClientDelegate>();
-
       // As BLE Host:
       //// services.UseBleHosting();
+
+      services.UseBleClient();
+      services.UseBleHosting();
+      services.UseNotifications();
+      services.UseJobs();
     }
 
     public override IServiceProvider CreateServiceProvider(IServiceCollection services)

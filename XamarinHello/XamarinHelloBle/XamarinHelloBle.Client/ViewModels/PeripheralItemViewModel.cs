@@ -45,6 +45,9 @@ namespace XamarinHelloBle.Client.ViewModels
       LocalName = adv.LocalName;
       TxPower = adv.TxPower ?? 0;
 
+      // Is this correct?
+      IsConnected = Peripheral.IsConnected();
+
       // TODO: Needs Tested
       //// ManufacturerData = adv.ManufacturerData == null
       ////   ? null : System.BitConverter.ToString(adv.ManufacturerData.Data);

@@ -72,10 +72,16 @@
     <PackageReference Include="Shiny.BluetoothLE">
       <Version>2.4.3.3003</Version>
     </PackageReference>
+    <PackageReference Include="Shiny.BluetoothLE.Hosting">
+      <Version>2.4.3.3003</Version>
+    </PackageReference>
     <PackageReference Include="Shiny.Core">
       <Version>2.4.3.3003</Version>
     </PackageReference>
     <PackageReference Include="Shiny.Jobs">
+      <Version>2.4.3.3003</Version>
+    </PackageReference>
+    <PackageReference Include="Shiny.Notifications">
       <Version>2.4.3.3003</Version>
     </PackageReference>
     <PackageReference Include="StyleCop.Analyzers.Unstable">
