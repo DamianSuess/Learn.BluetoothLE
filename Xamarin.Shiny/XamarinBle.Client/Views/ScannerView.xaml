@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:viewModels="clr-namespace:XamarinHelloBle.Client.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinHelloBle.Client.Views.ScannerView"
+             prism:ViewModelLocator.AutowireViewModel="True">
+  <ContentPage.Content>
+    <StackLayout>
+      <ActivityIndicator IsRunning="{Binding IsScanning}" IsVisible="{Binding IsScanning}" />
+
+      <Label Text="{Binding CanControlAdapterState, StringFormat='Can Control Adapter: {0}'}" />
+
+      <StackLayout Orientation="Horizontal">
+        <Button Text="Toggle Adapter"
+              Command="{Binding CmdToggleAdapterState}"
+              IsVisible="{Binding CanControlAdapterState}" />
+
+        <Button Command="{Binding CmdScan}">
+          <Button.Triggers>
+            <DataTrigger Binding="{Binding IsScanning}"
+                       TargetType="Button"
+                       Value="True">
+              <Setter Property="Text" Value="Stop Scanning" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsScanning}"
+                       TargetType="Button"
+                       Value="False">
+              <Setter Property="Text" Value="Scan" />
+            </DataTrigger>
+          </Button.Triggers>
+        </Button>
+      </StackLayout>
+
+      <CollectionView ItemSizingStrategy="MeasureFirstItem"
+                      ItemsSource="{Binding Peripherals}"
+                      SelectedItem="{Binding SelectedPeripheral}"
+                      SelectionMode="Single"
+                      VerticalOptions="FillAndExpand">
+        <CollectionView.ItemTemplate>
+          <DataTemplate x:DataType="viewModels:PeripheralItemViewModel">
+            <Grid ColumnDefinitions="*,Auto" RowDefinitions="30,15,15,15,15">
+
+              <Label Text="{Binding Name}"
+                     FontAttributes="Bold"
+                     FontSize="Medium" />
+
+              <Label Text="{Binding Rssi, StringFormat='RSSI: {0}'}"
+                     Grid.Column="1"
+                     TextColor="Red" />
+
+              <Label Text="{Binding Uuid, StringFormat='UUID: {0}'}"
+                     Grid.Row="1"
+                     Grid.ColumnSpan="2"
+                     FontAttributes="Italic" />
+
+              <Label Text="{Binding IsConnectable, StringFormat='Connectible: {0}'}"
+                     Grid.Row="2"
+                     Grid.Column="0" />
+
+              <Label Text="{Binding ServiceCount, StringFormat='{0} Services'}"
+                     Grid.Row="2"
+                     Grid.Column="1" />
+
+              <Label Text="{Binding LocalName, StringFormat='Local name: {0}'}"
+                     Grid.Row="3"
+                     Grid.Column="0" />
+
+              <Label Text="{Binding IsConnected, StringFormat='Is Connected: {0}'}"
+                     Grid.Row="4"
+                     Grid.ColumnSpan="2"
+                     HorizontalTextAlignment="Center"
+                     TextColor="Black">
+                <Label.Triggers>
+                  <DataTrigger Binding="{Binding IsConnected}"
+                               TargetType="Label"
+                               Value="True">
+                    <Setter Property="BackgroundColor" Value="Green" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding IsConnected}"
+                               TargetType="Label"
+                               Value="False">
+                    <Setter Property="BackgroundColor" Value="Yellow" />
+                  </DataTrigger>
+                </Label.Triggers>
+              </Label>
+            </Grid>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
