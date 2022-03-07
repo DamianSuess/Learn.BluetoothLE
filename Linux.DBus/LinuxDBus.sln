@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32210.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinuxDBus", "LinuxDBus.Client\LinuxDBus.Client.csproj", "{8A09C481-C718-40DB-8344-C30F2489FDD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinuxDbus.Bluetooth", "LinuxDBus.Client\LinuxDbus.Bluetooth.csproj", "{8A09C481-C718-40DB-8344-C30F2489FDD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

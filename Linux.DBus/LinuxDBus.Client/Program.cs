@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XamarinHelloBle.Linux
+namespace LinuxDbus.Bluetooth
 {
   class Program
   {

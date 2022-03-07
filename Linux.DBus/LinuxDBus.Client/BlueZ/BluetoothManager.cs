@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XamarinHelloBle.Linux.BlueZ
+namespace LinuxDbus.Bluetooth.BlueZ
 {
   public static class BluetoothManager
   {

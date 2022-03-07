@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XamarinHelloBle.Linux.BlueZ
+namespace LinuxDbus.Bluetooth.BlueZ
 {
-  public class Adapter
+  public class GattCharacteristics
   {
   }
 }
