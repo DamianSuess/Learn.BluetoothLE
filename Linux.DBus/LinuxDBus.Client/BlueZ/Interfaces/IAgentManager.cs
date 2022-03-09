@@ -8,5 +8,7 @@ public interface IAgentManager : IDBusObject
 {
   Task RegisterAgentAsync(ObjectPath agent, string capability);
 
+  Task RequestDefaultAgentAsync(ObjectPath agent);
+
   Task UnregisterAgentAsync(ObjectPath agent);
 }

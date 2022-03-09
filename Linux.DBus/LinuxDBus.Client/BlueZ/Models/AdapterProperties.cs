@@ -1,6 +1,6 @@
 ﻿using Tmds.DBus;
 
-namespace LinuxDbus.Bluetooth.BlueZ.Interfaces
+namespace LinuxDbus.Bluetooth.BlueZ.Models
 {
   [Dictionary]
   public class AdapterProperties
