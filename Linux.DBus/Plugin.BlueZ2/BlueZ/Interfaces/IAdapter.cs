@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using LinuxDbus.Bluetooth.BlueZ.Models;
 using Tmds.DBus;
 
 namespace LinuxDbus.Bluetooth.BlueZ.Interfaces
