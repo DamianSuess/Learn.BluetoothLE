@@ -10,6 +10,10 @@ class Program
   public static async Task Main(string[] args)
   {
 
+    Console.WriteLine("Plugin.BlueZ - Test Client");
+    Console.WriteLine("Press any <enter> to get started...");
+    Console.ReadLine();
+
     // Get adapter
     var adapter = (await BlueZManager.GetAdaptersAsync()).FirstOrDefault();
     var adapter0 = await BlueZManager.GetAdapterAsync(DefaultAdapter);
