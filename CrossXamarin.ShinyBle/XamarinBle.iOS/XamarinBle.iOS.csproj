@@ -214,7 +214,7 @@
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XamarinHelloBle.Client\XamarinHelloBle.Client.csproj">
+    <ProjectReference Include="..\XamarinBle.Client\XamarinBle.Client.csproj">
       <Project>{b4695392-249b-49b8-a637-2b6967f4f8ea}</Project>
       <Name>XamarinHelloBle.Client</Name>
     </ProjectReference>
