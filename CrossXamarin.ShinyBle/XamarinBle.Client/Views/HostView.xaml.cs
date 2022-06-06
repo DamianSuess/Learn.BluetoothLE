@@ -26,7 +26,8 @@ namespace XamarinHelloBle.Client.Views
 
     private void OnConfigure()
     {
-      var service = _host
+      ;
+      //// var service = _host
     }
   }
 }

@@ -9,7 +9,6 @@ using Prism.Navigation;
 using Shiny;
 using Shiny.BluetoothLE;
 using Xamarin.Forms;
-using XamarinHelloBle.Client.Services;
 
 namespace XamarinHelloBle.Client.ViewModels
 {
@@ -93,7 +92,15 @@ namespace XamarinHelloBle.Client.ViewModels
     public PeripheralItemViewModel SelectedPeripheral
     {
       get => _selectedPeripheral;
-      set => SetProperty(ref _selectedPeripheral, value);
+      set
+      {
+        SetProperty(ref _selectedPeripheral, value);
+
+        // Why not use, `_ble.StopScan();`
+        ScanStop();
+
+
+      }
     }
 
     public async void DeviceItemTappedAsync()
