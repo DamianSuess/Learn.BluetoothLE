@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossXamarin.PlugBle.Views.MainPage"
+             Title="{Binding Title}">
+
+  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <Label Text="Status:" />
+    <Label Text="{Binding BleAdapterState}" />
+
+    <StackLayout Orientation="Horizontal">
+      <Button Text="Scan Start" Command="{Binding CmdScanStart}" />
+      <Button Text="Scan Stop" Command="{Binding CmdScanStop}" />
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal">
+      <Button Text="Connect" Command="{Binding CmdConnect}" />
+      <Button Text="Disconnect" Command="{Binding CmdDisconnect}" />
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal">
+      <Entry Text="{Binding Message}" />
+      <Button Text="Send" Command="{Binding CmdSend}" />
+    </StackLayout>
+
+    <Label Text="{Binding BleDeviceSelected}" />
+    <ListView ItemsSource="{Binding Devices}"
+              SelectedItem="{Binding ItemSelected}">
+    </ListView>
+  </StackLayout>
+</ContentPage>
